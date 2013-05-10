@@ -1,11 +1,12 @@
-attachments_joomfish_remapper
-=============================
+Attachments Remapping for Joomfish
+==================================
 
 Extension for Joomla that allows parent ID remapping necessary for attachments
 to work properly with Attachments for Joomla.
 
-Simply install this extension and the Attachements code will recognize and use
-it without changing any settings or modifying any code.
+Simply install this extension (lib_attachments_remapper.zip) using the regular
+Joomla installer and the Attachements code will recognize and use it without
+changing any settings or modifying any code.
 
 REQUIRES:
 
