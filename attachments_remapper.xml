@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="library" method="upgrade" version="2.5.7">
+    <name>Attachments for Joomfish Remapper</name>
+    <libraryname>attachments_remapper</libraryname>
+    <author>Jonathan M. Cameron</author>
+    <creationDate>2013-05-09</creationDate>
+    <copyright>Copyright (C) 2013</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <authorEmail>jmcameron@jmcameron.net</authorEmail>
+    <authorUrl>jmcameron.net/attachments</authorUrl>
+    <version>1.0</version>
+    <description> 
+
+    Enable using Attachments for Joomla properly with Joomfish.
+
+    </description>
+    <files>
+       <filename>remapper.php</filename>
+       <filename>index.html</filename>
+    </files>
+</extension>
