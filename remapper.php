@@ -65,6 +65,8 @@ class AttachmentsRemapper
 				->where('t.reference_id=' . (int) $parent_id);
 			$db->setQuery($query);
 			$result = $db->loadObjectList();
+
+			// Make sure there were no errors
 			if ( $db->getErrorNum() )
 			{
 				// If there is a DB error, just return the original parent_id (without complaining)
