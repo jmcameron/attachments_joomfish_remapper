@@ -8,8 +8,8 @@ Simply install this extension (lib_attachments_remapper.zip) using the regular
 Joomla installer and the Attachements code will recognize and use it without
 changing any settings or modifying any code.
 
-To download lib_attachments_remapper.zip, click on the link above and then click 
-on the 'view raw' link on the next page.
+**To download lib_attachments_remapper.zip, click on the link above and then click 
+on the 'view raw' link on the next page.**
 
 REQUIRES:
 
