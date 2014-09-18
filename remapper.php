@@ -32,7 +32,7 @@ class AttachmentsRemapper
 	 *
 	 * @return int  the remapped parent_id.  Upon failure, the original parent_id is returned
 	 */
-	static public function remapParentID($parent_id, $parent_type, $parent_entity)
+	static public function remapParentID($parent_id, $parent_type, $parent_entity, $lang='')
 	{
 		// Only handle regular com_content articles and categories
 		if ($parent_type != 'com_content')
@@ -44,9 +44,26 @@ class AttachmentsRemapper
 			return $parent_id;
 		}
 
+		$app = JFactory::getApplication();
+
 		// For Joomfish, replace the parent_id with the translated ID
-		$lang = JRequest::getVar('lang', '');
-		if (($lang != '') AND ($lang != 'en'))
+		$which_end = 'site';
+		if ($app->isAdmin()) {
+			$which_end = 'admin';
+			}
+
+		// Get the default language SEF code
+		$default_lang_code = JComponentHelper::getParams('com_languages')->get($which_end,'en-GB');
+		$languages = JLanguageHelper::getLanguages('lang_code');
+		$default_lang_sef = $languages[$default_lang_code]->sef;
+
+		// Update the language if via override is in request
+		if (empty($lang)) {
+			$lang = JRequest::getVar('lang', '');
+			}
+			
+		// Remap the parent ID (if appropriate)
+		if (($lang != '') AND ($lang != $default_lang_sef))
 		{
 			// Figure out which table to use
 			$table = 'content';

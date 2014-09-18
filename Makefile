@@ -1,7 +1,6 @@
-VERSION = "1.0"
+VERSION = "1.1-Beta"
 VERSION2 = $(shell echo $(VERSION)|sed 's/ /-/g')
-# ZIPFILE = comp_permtest_$(VERSION2).zip
-ZIPFILE = lib_attachments_remapper.zip
+ZIPFILE = lib_attachments_remapper_$(VERSION2).zip
 
 FILES = *.xml *.php index.html README.md
 
