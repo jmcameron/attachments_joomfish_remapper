@@ -44,9 +44,13 @@ class AttachmentsRemapper
 			return $parent_id;
 		}
 
-		$app = JFactory::getApplication();
+		// Update the language if override is in the request
+		if (empty($lang)) {
+			$lang = JRequest::getVar('lang', '');
+			}
 
-		// For Joomfish, replace the parent_id with the translated ID
+		// Note if were are on the frontend of the backend
+		$app = JFactory::getApplication();
 		$which_end = 'site';
 		if ($app->isAdmin()) {
 			$which_end = 'admin';
@@ -56,13 +60,8 @@ class AttachmentsRemapper
 		$default_lang_code = JComponentHelper::getParams('com_languages')->get($which_end,'en-GB');
 		$languages = JLanguageHelper::getLanguages('lang_code');
 		$default_lang_sef = $languages[$default_lang_code]->sef;
-
-		// Update the language if via override is in request
-		if (empty($lang)) {
-			$lang = JRequest::getVar('lang', '');
-			}
 			
-		// Remap the parent ID (if appropriate)
+		// For Joomfish, replace the parent_id with the translated article ID (if appropriate)
 		if (($lang != '') AND ($lang != $default_lang_sef))
 		{
 			// Figure out which table to use
